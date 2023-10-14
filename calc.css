@@ -1,4 +1,4 @@
-*{
+/* *{
     margin : 0;
     padding : 0;
     box-sizing : border-box;
@@ -66,4 +66,97 @@ html,body{
     background-color: rgb(166, 237, 213);
     transform: scale(1.1,1.1);
 }
+ */
 
+
+
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(149, 145, 145);
+}
+
+.calc {
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+    background-color: rgb(228, 163, 163);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2%; /* Consistent percentage-based margin */
+}
+
+.screen {
+    width: 90%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.504);
+    font-size: xx-large;
+    color: white;
+    margin: 2% 2%; /* Consistent percentage-based margin */
+    padding: 1em;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.buttons {
+    width: 95%;
+    height: 66%;
+    margin: 2%; /* Consistent percentage-based margin */
+    padding: 0.5em;
+    border-radius: 1em;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%; /* Consistent percentage-based gap */
+}
+
+.buttons input {
+    color: rgb(23, 5, 5);
+    border-radius: 0.5em;
+    font-size: xx-large;
+    width: 100%;
+    max-width: 100px;
+    background-color: aquamarine;
+    transition: background-color 0.3s;
+}
+
+.buttons input:hover {
+    cursor: pointer;
+    background-color: rgb(166, 237, 213);
+    transform: scale(1.1, 1.1);
+}
+
+/* Add media queries for different screen sizes */
+
+@media (max-width: 768px) {
+    .calc {
+        width: 95%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .calc {
+        width: 100%;
+    }
+}
