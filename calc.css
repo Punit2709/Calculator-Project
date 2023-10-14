@@ -1,78 +1,4 @@
-/* *{
-    margin : 0;
-    padding : 0;
-    box-sizing : border-box;
-}
-
-html,body{
-    width : 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    background-color: rgb(149, 145, 145);
-}
-
-.calc{
-    width: 35%;
-    height: 80%;
-    background-color: rgb(228, 163, 163);
-    border-radius: 1rem;
-}
-
-.screen{
-    width: 90%;
-    height: 20%;
-    background-color: rgba(0, 0, 0, 0.504);
-    
-    font-size:xx-large;
-    color: white;
-    
-    
-    margin: 1em 2rem;
-    padding: 1em;
-    border-radius: 2rem;
-    position: relative;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    word-break: break-all;
-    overflow-wrap: break-word;
-
-}
-
-.buttons{
-    width: 95%;
-    height: 66%;
-    margin: 1em;
-    padding: 0.5em;
-    border-radius: 1em;
-    background-color: aquamarine;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
-}
-
-.buttons input{
-    color: rgb(23, 5, 5);
-    border-radius: 0.5em;
-    font-size:xx-large;
-}
-
-.buttons input:hover{
-    cursor: pointer;
-    background-color: rgb(166, 237, 213);
-    transform: scale(1.1,1.1);
-}
- */
-
-
-
-
-
- * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -81,22 +7,17 @@ html,body{
 html, body {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     background-color: rgb(149, 145, 145);
 }
 
 .calc {
-    width: 80%;
-    max-width: 500px;
+    width: 90%; /* Increase the width for small screens */
+    max-width: 500px; /* Set a maximum width to avoid the content becoming too wide */
     height: 80%;
     background-color: rgb(228, 163, 163);
     border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 2%; /* Consistent percentage-based margin */
 }
 
 .screen {
@@ -105,9 +26,10 @@ html, body {
     background-color: rgba(0, 0, 0, 0.504);
     font-size: xx-large;
     color: white;
-    margin: 2% 2%; /* Consistent percentage-based margin */
+    margin: 1em 2rem;
     padding: 1em;
     border-radius: 2rem;
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -118,23 +40,19 @@ html, body {
 .buttons {
     width: 95%;
     height: 66%;
-    margin: 2%; /* Consistent percentage-based margin */
+    margin: 1em;
     padding: 0.5em;
     border-radius: 1em;
     background-color: aquamarine;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2%; /* Consistent percentage-based gap */
+    gap: 1em;
 }
 
 .buttons input {
     color: rgb(23, 5, 5);
     border-radius: 0.5em;
     font-size: xx-large;
-    width: 100%;
-    max-width: 100px;
-    background-color: aquamarine;
-    transition: background-color 0.3s;
 }
 
 .buttons input:hover {
@@ -143,20 +61,23 @@ html, body {
     transform: scale(1.1, 1.1);
 }
 
-/* Add media queries for different screen sizes */
-
+/* Add a media query for smaller screens */
 @media (max-width: 768px) {
     .calc {
-        width: 95%;
+        width: 95%; /* Increase the width for smaller screens */
     }
-
+    
     .buttons {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* Reset columns for small screens */
+    }
+    
+    .opBtn {
+        grid-row: 4; /* Move operators to the last row */
     }
 }
 
 @media (max-width: 480px) {
     .calc {
-        width: 100%;
+        width: 100%; /* Expand to full width on very small screens */
     }
 }
